@@ -16,17 +16,17 @@ import br.com.fiap.entity.Pedido;
 public class App {
 
 	public static void main(String[] args) {
-		EntityManagerFactory emf = Persistence.createEntityManagerFactory("Persistencia_Atividade3");
+		EntityManagerFactory emf = Persistence.createEntityManagerFactory("PersistenciaAtividade3");
 		EntityManager em = emf.createEntityManager();
 
 		Pedido pedido = new Pedido();
 		pedido.setData(new Date());
-		pedido.setDescricao("Galaxy S8 Samsung");
-		pedido.setValor(2000.00);
+		pedido.setDescricao("Moto z");
+		pedido.setValor(1800.00);
 
 		Cliente cliente = new Cliente();
-		cliente.setNome("João Andrade");
-		cliente.setEmail("joao.andrade@pedro.com");
+		cliente.setNome("Glauber Andrade");
+		cliente.setEmail("glauber.andrade@gmail.com");
 		Set<Pedido> pedidos = new HashSet<>();
 		pedido.setCliente(cliente);
 		pedidos.add(pedido);
@@ -38,8 +38,8 @@ public class App {
 		genericDaoCliente.adicionar(cliente);
 		genericDaoPedido.adicionar(pedido);
 
-		cliente.setEmail("jonnhy.pedro@email.com");
-		pedido.setValor(4000.00);
+		cliente.setEmail("pedro@bol.com.br");
+		pedido.setValor(3000.00);
 
 		genericDaoCliente.atualizar(cliente);
 		genericDaoPedido.atualizar(pedido);
